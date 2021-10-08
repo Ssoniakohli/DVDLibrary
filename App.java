@@ -3,27 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sg.dvdlibrary;
+package com.sg.DVDLibrary;
 
-import com.sg.dvdlibrary.controller.DVDController;
-import com.sg.dvdlibrary.dao.DVDLibraryDao;
-import com.sg.dvdlibrary.dao.DVDLibraryDaoFileImpl;
-import com.sg.dvdlibrary.ui.DVDView;
-import com.sg.dvdlibrary.ui.userIO;
-import com.sg.dvdlibrary.ui.userIOConsoleImpl;
 
+
+import com.sg.DVDLibrary.controller.DvdLibraryController;
+import com.sg.DVDLibrary.dao.DvdLibraryDao;
+import com.sg.DVDLibrary.dao.DvdLibraryDaoImpl;
+import com.sg.DVDLibrary.ui.DvdLibraryView;
+import com.sg.DVDLibrary.ui.UserIO;
+import com.sg.DVDLibrary.ui.UserIOConsoleImpl;
 
 /**
  *
  * @author HP
- */ 
+ */
 public class App {
-    public static void main(String[] args){
-    userIO myIo = new userIOConsoleImpl();
-    DVDView myView = new DVDView(myIo);
-    DVDLibraryDao myDao = new DVDLibraryDaoFileImpl();
-    DVDController controller = 
-        new DVDController(myDao, myView);
-    controller.run();
+    public static void main(String[] args) {
+        UserIO myIo = new UserIOConsoleImpl();
+        DvdLibraryView myView = new DvdLibraryView(myIo);
+        DvdLibraryDao myDao = new DvdLibraryDaoImpl();
+        DvdLibraryController controller = new DvdLibraryController(myDao, myView);
+        controller.run();
     }
 }
