@@ -85,7 +85,6 @@ import java.util.List;
         String dvdTitle = view.getDvdTitleChoice();
         Dvd dvd = dao.getDvd(dvdTitle);
         view.getEditDvdInfo(dvd);
-        dao.addDvd(dvdTitle, dvd);
         view.displayEditDvdSuccessBanner();
     }
     private void searchAndViewDvd() throws DvdLibraryDaoException{
